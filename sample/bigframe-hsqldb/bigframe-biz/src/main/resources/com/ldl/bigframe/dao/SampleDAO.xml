@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="gb18030"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ldl.bigframe.domain.SampleDO">
+	<insert id="insert" parameterType="SampleDO" >
+    	<selectKey  resultType="int" keyProperty="id">
+			call identity()
+        </selectKey>
+		INSERT 
+		  INTO sample(name,content,createTime,updateTime) 
+		VALUES(#{name},#{content},now(),now())
+	</insert>
+
+	<delete id="delete" parameterType="int" >
+		DELETE 
+		  FROM sample 
+		 WHERE id=#{id}
+	</delete>
+	
+	<delete id="deleteBatch" parameterType="SampleDO" >
+		DELETE FROM sample WHERE id=#{id}
+	</delete>
+
+	<update id="update" parameterType="SampleDO" >
+		UPDATE sample 
+		   SET name=#{name},content=#{content},updateTime=now() 
+	     WHERE id=#{id};
+	</update>
+
+	<select id="getObject" parameterType="int" resultType="SampleDO">
+	  SELECT id,name,content,createTime,updateTime 
+	  FROM sample
+	  WHERE id = #{id}
+	</select>
+	
+	<select id="findList" resultType="SampleDO">
+	  SELECT id,name,content,createTime,updateTime 
+	  FROM sample
+	</select>
+	
+	<select id="findPagedList" resultType="SampleDO" parameterType="SampleDO" >
+	  SELECT limit #{startRow} #{pageSize} id,name,content,createTime,updateTime 
+	  FROM sample 
+	  ORDER BY id
+	</select>
+	<select id="findPagedList_count" resultType="int">
+	  SELECT count(*) 
+	  FROM sample 
+	</select>
+
+
+</mapper>

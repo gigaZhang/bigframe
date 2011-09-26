@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gb18030" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="sample" namespace="/sample" extends="home">
+        <action name="list" class="sampleAction" method="list" >
+        	<result type="freemarker" >/struts_templates/sample/list.ftl</result>
+        </action>
+        <action name="delete" class="sampleAction" method="delete" >
+        	<result type="redirectAction">
+        		<param name="actionName">list</param>
+        	</result>
+        </action>
+        <action name="add" class="sampleAction" method="add" >
+        	<result type="freemarker">/struts_templates/sample/add.ftl</result>
+        </action>
+        <action name="doAdd" class="sampleAction" method="doAdd" >
+        	<result type="redirectAction">
+        		<param name="actionName">list</param>
+        	</result>
+        </action>
+        <action name="update" class="sampleAction" method="update" >
+        	<result type="json" >
+        		<param name="root">json</param>
+        	</result>
+        </action>
+        <action name="doUpdate" class="sampleAction" method="doUpdate" >
+        	<result type="redirectAction">
+        		<param name="actionName">list</param>
+        	</result>
+        </action>
+    </package>
+</struts>
