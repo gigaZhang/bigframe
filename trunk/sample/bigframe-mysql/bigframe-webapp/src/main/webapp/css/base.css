@@ -1,0 +1,53 @@
+.d{margin-left:auto; margin-right:auto;background:#e8f3fd;width:800px;}
+.p{margin-left:auto; margin-right:auto;width:800px;}
+
+table{
+	font-size:12px;
+}
+table{
+	table-layout:fixed;
+	empty-cells:show; 
+	border-collapse: collapse;
+}
+td{
+	height:40px;
+}
+
+
+table.t2{
+	border:1px solid #9db3c5;
+	color:#666;
+}
+table.t2 th {
+	background-image: url(../images/th_bg.gif);
+	background-repeat::repeat-x;
+	height:30px;
+	color:#fff;
+}
+table.t2 td{
+	border:1px dotted #cad9ea;
+	padding:0 2px 0;
+}
+table.t2 th{
+	border:1px solid #a7d1fd;
+	padding:0 2px 0;
+}
+table.t2 tr.a1{
+	background-color:#e8f3fd;
+}
+
+
+.pagination{ font-family:Tahoma; font-size:12px; margin:6px 4px;height:20px;line-height:20px;}
+.pagination a, .page-start, .page-end, .key-word, .settings, .mode, .mode a, .taxis, .taxis-order, .taxis-order a, .attribute-nav .basic, .sub-menu, .list-view-enlarge .price a{background-image:url(../images/bg_page.png); background-repeat:no-repeat;}
+.page-top, .page-bottom{float:left;height:20px;line-height:20px; vertical-align:middle;}
+.pagination a, .page-info, .page-prev, .page-cur, .page-start, .page-end, .page-break, .page-skip{float:left; height:18px; margin:0 3px 0 0; text-align:center; white-space:nowrap; vertical-align:middle; line-height:18px; font-family:Tahoma, SimSun, Arial;}
+.page-start, .pagination a, .page-end{padding:0 5px; border:solid 1px #ccc;}
+.pagination a:hover{border:solid 1px #FD6D01; text-decoration:none;}
+.page-start{width:20px; padding:0!important; background-position:7px -175px;}
+a.page-prev{width:60px; padding:0!important; background-position:-68px -175px!important;}
+.page-cur, .page-break{padding:0 3px;}
+a.page-next{padding-right:16px; background-position:-179px -175px!important;}
+.page-end{color:#999; padding-right:16px; background-position:-104px -175px;}
+.page-cur{border:1px solid #FD6D01; padding:0 5px; font-weight:700; color:#FD6D01; background-color:#e8f3fd;}
+.input-text{width:30px; height:16px; padding:0px; margin:0 5px; border:solid 1px #999; vertical-align:top; *vertical-align:middle; font-family:Tahoma, SimSun, Arial; color:#000; text-align:center;}
+.input-button{height:20px;}
