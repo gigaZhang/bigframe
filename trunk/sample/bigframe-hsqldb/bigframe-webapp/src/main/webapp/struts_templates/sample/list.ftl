@@ -42,9 +42,9 @@
 			  <thead>
 			    <th width="5%">编号</th>
 			    <th width="15%">名称</th>
-			    <th width="45%">内容</th>
-			    <th width="20%">创建时间</th>
-			    <th width="20%">更新时间</th>
+			    <th width="40%">内容</th>
+			    <th width="15%">创建时间</th>
+			    <th width="15%">更新时间</th>
 			    <th width="10%">操作</th>
 			  </thead>
 				<#if pageModel?? >

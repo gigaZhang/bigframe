@@ -64,21 +64,13 @@
 			    <artifactId>jetty-maven-plugin</artifactId>
 			    <version>8.0.1.v20110908</version>
           <configuration>
-             <webAppSourceDirectory>${basedir}/${moduleWebapp}/src/main/webapp</webAppSourceDirectory>
-             <classesDirectory>${basedir}/${moduleWebapp}/target/classes</classesDirectory>
              <scanIntervalSeconds>2</scanIntervalSeconds>
              <stopKey>foo</stopKey>
          		 <stopPort>9999</stopPort>
              <webAppConfig>
-             	<contextPath>/${moduleWebapp}</contextPath>
-							<!-- 设置extraClasspath，多个用";"隔开 -->
-             	<extraClasspath>${basedir}/${moduleBiz}/target/classes</extraClasspath>
+             	<contextPath>/bigframe</contextPath>
+
             </webAppConfig>
-            
-						<!-- 设置监听目录 -->
-            <scanTargets>
-              <scanTarget>${basedir}/${moduleBiz}/target/classes</scanTarget>
-            </scanTargets>
 
           </configuration>			    
 			</plugin>

@@ -1,1 +1,4 @@
-如果系统安装好jdk和maven环境的话，双击run.bat可以使用jetty+hsqldb运行实例，在浏览器中http://localhost:8080/bigframe-webapp/home.htm
+如果系统安装好jdk和maven环境的话，双击run.bat可以使用jetty+hsqldb运行实例，
+在浏览器中http://localhost:8080/bigframe/home.htm。
+如果启动jetty失败，排除jdk和maven环境配置外，可能是jar文件冲突，bigframe-webapp\src\main\webapp\WEB-INF\目录
+下的classes文件夹删除，此文件夹可能是导入eclipse后生成的。
