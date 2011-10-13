@@ -2,13 +2,13 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=gbk18030">
-	<title>freemaker+struts2+spring3+mybatis+mysql整合</title>
+	<title>freemaker+struts2+spring3+mybatis整合</title>
 	<link  rel="stylesheet" type="text/css" href="${staticFilePrefix}/css/base.css"/>
 </head>
 <body>
 	<div class="d">
 		<div style="font-size: 25px;text-align:center" >
-			freemaker + struts2 + spring3 + mybatis + mysql 整合：
+			freemarker + struts2 + spring3 + mybatis 整合：
 			<br>
 			<br>
 		</div>
