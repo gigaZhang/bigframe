@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="gb18030"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ldl.bigframe.domain${module}.${table.tableName}DO">
+<#if (table.columnList?size > 0)>
+    <resultMap id="${table.tableName?uncap_first}Result" type="${table.tableName}DO">
+	<#list table.columnList as column>
+		<result property="${column.columnName}" column="${column.code}"/>
+	</#list>    
+    </resultMap>
+
+    <insert id="insert" parameterType="${table.tableName}DO">
+	<#if table.primaryColumn?? >
+	    <selectKey resultType="${table.primaryColumn.javaDataType?lower_case}" keyProperty="${table.primaryColumn.columnName}">
+			SELECT LAST_INSERT_ID()
+        </selectKey>
+	    <![CDATA[
+	        INSERT INTO ${table.code}(
+		<#list table.columnList as column>
+			<#if column.code != table.primaryColumn.code >
+				${column.code}<#if column_has_next >,</#if>
+			</#if>
+		</#list>
+	        ) VALUES (
+		<#list table.columnList as column>
+				<#if column.code != table.primaryColumn.code ><#noparse>#{</#noparse>${column.columnName}<#noparse>}</#noparse><#if column_has_next >,</#if></#if>
+		</#list>
+	        )
+	    ]]>
+	<#else>
+	    <![CDATA[
+	        INSERT INTO ${table.code}(
+		<#list table.columnList as column>
+				${column.code}<#if column_has_next >,</#if>
+		</#list>
+	        ) VALUES (
+		<#list table.columnList as column>
+				<#noparse>#{</#noparse>${column.columnName}<#noparse>}</#noparse><#if column_has_next >,</#if>
+		</#list>
+	        )
+	    ]]>
+	</#if>
+	
+    </insert>
+
+	<delete id="delete" parameterType="int" >
+		DELETE 
+		  FROM ${table.code} 
+		WHERE <#if table.primaryColumn?? >${table.primaryColumn.code}=<#noparse>#{id}</#noparse><#else>${table.columnList[0].code}=<#noparse>#{id}</#noparse></#if>
+	</delete>
+
+	<update id="update" parameterType="${table.tableName}DO" >
+        UPDATE ${table.code} 
+        SET 
+		<#list table.columnList as column>
+			${column.code}=<#noparse>#{</#noparse>${column.columnName}<#noparse>}</#noparse><#if column_has_next >,</#if>
+		</#list>		        
+        WHERE <#if table.primaryColumn?? >${table.primaryColumn.code}=<#noparse>#{</#noparse>${table.primaryColumn.columnName}<#noparse>}</#noparse><#else>${table.columnList[0].code}=<#noparse>#{</#noparse>${table.columnList[0].columnName}<#noparse>}</#noparse></#if>
+	</update>
+
+	<select id="getObject" parameterType="int" resultMap="${table.tableName?uncap_first}Result">
+		SELECT
+		<#list table.columnList as column>
+			${column.code}<#if column_has_next >,</#if>
+		</#list>
+        from ${table.code}
+        WHERE <#if table.primaryColumn?? >${table.primaryColumn.code}=<#noparse>#{id}</#noparse><#else>${table.columnList[0].code}=<#noparse>#{id}</#noparse></#if>
+	</select>
+	
+	<select id="findList" resultMap="${table.tableName?uncap_first}Result">
+        SELECT
+		<#list table.columnList as column>
+			${column.code}<#if column_has_next >,</#if>
+		</#list>
+        FROM ${table.code} 
+	</select>
+	
+	<select id="findPagedList" resultMap="${table.tableName?uncap_first}Result" parameterType="${table.tableName}DO" >
+        SELECT
+		<#list table.columnList as column>
+			${column.code}<#if column_has_next >,</#if>
+		</#list>
+        FROM ${table.code} 
+		<where>
+		<#list table.columnList as column>
+			<if test="${column.columnName} != null">
+				AND ${column.code}=<#noparse>#{</#noparse>${column.columnName}<#noparse>}</#noparse>
+			</if>
+		</#list>		
+		</where>
+	    <#noparse>LIMIT #{startRow},#{pageSize}</#noparse>
+	</select>
+	<select id="findPagedList_count" resultType="int" parameterType="${table.tableName}DO" >
+        SELECT count(*)
+        FROM ${table.code} 
+		<where>
+		<#list table.columnList as column>
+			<if test="${column.columnName} != null">
+				AND ${column.code}=<#noparse>#{</#noparse>${column.columnName}<#noparse>}</#noparse>
+			</if>
+		</#list>	
+		</where>
+	</select>
+
+</#if> 
+</mapper>
