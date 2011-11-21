@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gb18030" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="${module?replace('.','')}${table.tableName?uncap_first}" namespace="${module?replace('.','/')}/${table.tableName?uncap_first}" extends="home">
+        <action name="list" class="${table.tableName?uncap_first}Action" method="list" >
+        	<result type="freemarker" >/struts_templates${module?replace(".","/")}/${table.tableName?uncap_first}/list.ftl</result>
+        </action>
+    </package>
+</struts>
