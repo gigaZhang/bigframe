@@ -1,3 +1,42 @@
+.d{margin-left:auto; margin-right:auto;background:#e8f3fd;width:800px;}
+.p{margin-left:auto; margin-right:auto;width:800px;}
+
+table{
+	font-size:12px;
+}
+table{
+	table-layout:fixed;
+	empty-cells:show; 
+	border-collapse: collapse;
+}
+td{
+	height:40px;
+}
+
+
+table.t2{
+	border:1px solid #9db3c5;
+	color:#666;
+}
+table.t2 th {
+	background-image: url(../images/th_bg.gif);
+	background-repeat::repeat-x;
+	height:30px;
+	color:#fff;
+}
+table.t2 td{
+	border:1px dotted #cad9ea;
+	padding:0 2px 0;
+}
+table.t2 th{
+	border:1px solid #a7d1fd;
+	padding:0 2px 0;
+}
+table.t2 tr.a1{
+	background-color:#e8f3fd;
+}
+
+
 .pagination{ font-family:Tahoma; font-size:12px; margin:6px 4px;height:20px;line-height:20px;}
 .pagination a, .page-start, .page-end, .key-word, .settings, .mode, .mode a, .taxis, .taxis-order, .taxis-order a, .attribute-nav .basic, .sub-menu, .list-view-enlarge .price a{background-image:url(../images/bg_page.png); background-repeat:no-repeat;}
 .page-top, .page-bottom{float:left;height:20px;line-height:20px; vertical-align:middle;}
