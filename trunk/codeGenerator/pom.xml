@@ -6,6 +6,9 @@
   <packaging>maven-plugin</packaging>
   <version>1.0.1</version>
   <name>code-maven-plugin Maven Mojo</name>
+  <properties>
+	<encoding>gb18030</encoding>
+  </properties>  
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
