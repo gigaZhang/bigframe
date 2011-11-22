@@ -63,21 +63,28 @@ public class GeneratorMojo extends AbstractMojo{
     public void execute()throws MojoExecutionException{
     	try {
     		if(!templateDirectory.exists()){
-    			throw new MojoExecutionException("ERROR:templateDirectory--" + templateDirectory.getCanonicalPath() + "文件夹不存在。");
+    			throw new MojoExecutionException("ERROR:templateDirectory:" + templateDirectory.getCanonicalPath() + "文件夹不存在。");
     		}else if(!templateDirectory.isDirectory()){
-    			throw new MojoExecutionException("ERROR:templateDirectory--" + templateDirectory.getCanonicalPath() + "不是文件夹。");
+    			throw new MojoExecutionException("ERROR:templateDirectory:" + templateDirectory.getCanonicalPath() + "不是文件夹。");
+    		}else{
+    			getLog().info("templateDirectory:" + templateDirectory.getCanonicalPath());
     		}
     		if(!outputDirectory.exists()){
     			outputDirectory.mkdirs();
+    			getLog().info("outputDirectory:" + outputDirectory.getCanonicalPath());
     		}else if(!outputDirectory.isDirectory()){
-    			throw new MojoExecutionException("ERROR:outputDirectory--" + outputDirectory.getCanonicalPath() + "不是文件夹。");
+    			throw new MojoExecutionException("ERROR:outputDirectory:" + outputDirectory.getCanonicalPath() + "不是文件夹。");
+    		}else{
+    			getLog().info("outputDirectory:" + outputDirectory.getCanonicalPath());
     		}
     		
-	    	if(!pdmFile.exists()){
-	    		throw new MojoExecutionException("ERROR:pdmFile--" + pdmFile.getCanonicalPath() + "文件不存在。");
-	    	}else if(!pdmFile.isFile()){
-	    		throw new MojoExecutionException("ERROR:pdmFile--" + pdmFile.getCanonicalPath() + "不是文件。");
-	    	}
+			if(!pdmFile.exists()){
+				throw new MojoExecutionException("ERROR:pdmFile:" + pdmFile.getCanonicalPath() + "文件不存在。");
+			}else if(!pdmFile.isFile()){
+				throw new MojoExecutionException("ERROR:pdmFile:" + pdmFile.getCanonicalPath() + "不是文件。");
+			}else{
+				getLog().info("pdmFile:" + pdmFile.getCanonicalPath());
+			}
 	    	
     	} catch (IOException e) {
     		throw new MojoExecutionException("ERROR:资源文件夹不存在。");
