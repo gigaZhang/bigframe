@@ -25,12 +25,7 @@
 				<li>8）、单元测试基类的封装</li>
 				<li>9）、struts2集成jsonResult</li>
 				<li>10）、使用jetty应用容器，内存数据库hsqldb测试例子代码</li>
-			</ul>
-		<div>
-		<div>
-			2、计划的功能：
-			<ul>
-				<li>1）、maven插件生成框架(使用freemarker实现)，支持设置代码的编码，目前所有文件的编码为gb18030</li>
+				<li>11）、maven插件生成框架(使用freemarker实现)</li>
 			</ul>
 		<div>
 		<div>
