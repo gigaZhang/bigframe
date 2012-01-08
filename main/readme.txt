@@ -16,4 +16,4 @@
 
   1）、maven插件生成框架(使用freemarker实现)，支持设置代码的编码，目前所有文件的编码为gb18030
 
-3、使用jetty应用容器，内存数据库hsqldb测试例子代码在trunk/sample/bigframe-hsqldb/下。
+使用jetty应用容器，内存数据库hsqldb测试例子代码在trunk/sample/bigframe-hsqldb/下。 
