@@ -1,6 +1,6 @@
-package com.ldl.code.pdm;
+package com.taobao.tdccode.pdm;
 
-import com.ldl.code.util.StringUtils;
+import com.taobao.tdccode.util.StringUtils;
 
 public class Column {
 	
@@ -46,9 +46,9 @@ public class Column {
 		}
 		String type = dataType;
 		if(dataType.indexOf("(") != -1){
-			type = dataType.substring(0,dataType.indexOf("(") + 1);
+			type = dataType.substring(0,dataType.indexOf("("));
 		}
-		return JdbcDataType.forType(type);
+		return JdbcDataType.forType(type.toLowerCase());
 	}
 	
 	/**
