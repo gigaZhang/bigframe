@@ -1,6 +1,8 @@
-package com.taobao.tdccode.pdm;
+package com.ldl.code.pdm;
 
-import com.taobao.tdccode.util.StringUtils;
+import com.ldl.code.util.StringUtils;
+
+
 
 public class Column {
 	
